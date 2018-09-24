@@ -4,7 +4,7 @@ app.controller('myCtrl', ['$scope','$http', function($scope,$http) {
     $scope.data = ""; 
   
     $scope.fetchData = function(user){
-        $http.get('https://api.github.com/search/repositories?q='+$scope.Value+'+language:all&sort=stars&order=desc&APPID=f3212fc2ddbe5cb7d3a033784d095aef254f11a1').then(function(response){
+        $http.get('https://api.github.com/search/repositories?q='+$scope.Value+'+language:all&sort=stars&order=desc').then(function(response){
             $scope.data = response.data.items;
         }) 
     }
