@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+        <script src="app.js" type="application/javascript"></script>  
+        <title>GitHub Favorite Repo</title>
+        <link rel="stylesheet" href="style.css" />
+          
+    </head>
+
+<body>
+    <div class="Title">
+        <h1 style="text-align:center; color: white">My GitHub favorites</h1>
+    </div>
+    <div ng-app="myApp" ng-controller="myCtrl" class="search">
+        <br>
+        <br>
+         <input type="text" ng-model="Value" style="width:70%;  margin-left:20px; padding: 10px 0px 10px 15px; border-radius: 5px" id="In" onfocus="this.value=''">
+         <button ng-click="fetchData(user)" class="btn_search" >search</button>
+
+        <table id="Tab1">
+            <tr>
+                <th>Name</th>
+                <th>Language</th>
+                <th>Latest Tag</th>
+            </tr>
+            <tr ng-repeat="items in data | limitTo : 10 ">
+                <td>{{items.full_name}}</td>
+                <td>{{items.language}}</td>
+                <td></td>
+                <td><button id="btn_add" onclick="Insert(this)">Add</button></td>    
+            </tr>
+        </table>  
+    </div>
+    <div class="ListBox">
+        <br>
+            <table id="Tab2">
+                    <tr>
+                        <th>Name</th>
+                        <th>Language</th>
+                        <th>Latest Tag</th>
+                    </tr>
+                    
+                </table> 
+    </div>
+
+   
+    
+</body>
+</html>
